@@ -31,7 +31,6 @@ extension StringProtocol {
 }
 
 var outputValueSum = 0
-var decodedEntries: [Int] = []
 
 for line in entries {
     var uniqueSegments = ""
@@ -87,13 +86,10 @@ for line in entries {
             return pattern as! Int
         }
     }
-    
-    decodedEntries += decodedLine
-    
+        
     outputValueSum += decodedLine
         .suffix(4)
         .reduce(0) { $0 * 10 + $1 }
 }
 
 print(outputValueSum)
-//print(decodedEntries)
