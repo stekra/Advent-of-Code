@@ -5,3 +5,9 @@ public func input(filename: String = "input") -> String {
     let rawInput = try! Data(contentsOf: url)
     return String(data: rawInput, encoding: .utf8)!
 }
+
+extension StringProtocol {
+    public func lines() -> [SubSequence] {
+        split(separator: "\n")
+    }
+}
